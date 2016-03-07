@@ -10,6 +10,7 @@
 		30E278821C8D8BBE00054FB8 /* RequestAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E278811C8D8BBE00054FB8 /* RequestAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30E278891C8D8BBE00054FB8 /* RequestAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E2787E1C8D8BBE00054FB8 /* RequestAlert.framework */; };
 		30E2788E1C8D8BBE00054FB8 /* RequestAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2788D1C8D8BBE00054FB8 /* RequestAlertTests.swift */; };
+		30E2790D1C8D94AF00054FB8 /* RequestAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		30E278881C8D8BBE00054FB8 /* RequestAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RequestAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E2788D1C8D8BBE00054FB8 /* RequestAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAlertTests.swift; sourceTree = "<group>"; };
 		30E2788F1C8D8BBE00054FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				30E278811C8D8BBE00054FB8 /* RequestAlert.h */,
 				30E278831C8D8BBE00054FB8 /* Info.plist */,
+				30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */,
 			);
 			path = RequestAlert;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30E2790D1C8D94AF00054FB8 /* RequestAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,7 @@
 		30E278931C8D8BBE00054FB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +323,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.RequestAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		30E278941C8D8BBE00054FB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
