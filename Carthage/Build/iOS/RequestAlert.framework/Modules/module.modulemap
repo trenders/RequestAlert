@@ -1,0 +1,6 @@
+framework module RequestAlert {
+  umbrella header "RequestAlert.h"
+
+  export *
+  module * { export * }
+}
