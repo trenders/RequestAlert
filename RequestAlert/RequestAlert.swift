@@ -96,6 +96,8 @@ struct RequestAlert {
         return hasBeenPushedOKButton
     }
     
+    //MARK: - private methods
+    
     private static func udCountKey(alertId alertId: String) -> String {
         return kUdCountKeyBase + alertId
     }
@@ -156,5 +158,4 @@ struct RequestAlert {
         
         NSUserDefaults.standardUserDefaults().setInteger(currentDisplayedNum, forKey: self.dynamicType.udDisplayedNumKey(alertId: alertId))
     }
-
 }
