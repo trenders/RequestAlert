@@ -5,7 +5,6 @@
 //  Created by HARA KENTA on 2016/03/07.
 //  Copyright © 2016年 Hara Kenta. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
