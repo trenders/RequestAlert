@@ -76,6 +76,9 @@ public struct RequestAlert {
         
         if alert.shouldShowAlertController(currentCount: currentCount) {
             alert.showAlertController(pushedOKButtonClosure: pushedOKButtonClosure)
+        } else {
+            NSUserDefaults.standardUserDefaults().setInteger(currentCount, forKey: udCountKey(alertId: id))
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
     
@@ -154,5 +157,6 @@ public struct RequestAlert {
         currentDisplayedNum++
         
         NSUserDefaults.standardUserDefaults().setInteger(currentDisplayedNum, forKey: self.dynamicType.udDisplayedNumKey(alertId: alertId))
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }
