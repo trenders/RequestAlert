@@ -8,12 +8,9 @@
 
 import Foundation
 import UIKit
-
-struct RequestAlert {
+public struct RequestAlert {
     
-    typealias PushedOKButtonClosure = () -> Void
-    
-    static private var requestAlertInstancesDic = [String: RequestAlert]()
+    private static var requestAlertInstancesDic = [String: RequestAlert]()
     
     private static let kBundleId = "harakenta.RequestAlert."
     
@@ -44,7 +41,7 @@ struct RequestAlert {
         self.OKButtonTitle = OKButtonTitle
     }
     
-    static func addRequestAlert(
+    public static func addRequestAlert(
         id id: String,
         intervalCount: Int,
         alertTitle: String,
@@ -63,14 +60,14 @@ struct RequestAlert {
         requestAlertInstancesDic[id] = requestAlert
     }
     
-    static func showAlert(id id: String, pushedOKButtonClosure: PushedOKButtonClosure?) {
+    public static func showAlert(id id: String, pushedOKButtonClosure: (() -> Void)?) {
         guard let alert = requestAlertInstancesDic[id] else { fatalError("There is no alert id : \(id)") }
         
         alert.showAlertController(pushedOKButtonClosure: pushedOKButtonClosure)
         
     }
 
-    static func incrementCount(id id: String, pushedOKButtonClosure: PushedOKButtonClosure? ){
+    public static func incrementCount(id id: String, pushedOKButtonClosure: (() -> Void)? ){
 
         var currentCount = NSUserDefaults.standardUserDefaults().integerForKey(udCountKey(alertId: id))
         currentCount++
@@ -114,7 +111,7 @@ struct RequestAlert {
         return currentCount >= intervalCount
     }
     
-    private func showAlertController(pushedOKButtonClosure pushedOKButtonClosure: PushedOKButtonClosure?) {
+    private func showAlertController(pushedOKButtonClosure pushedOKButtonClosure: (() -> Void)?) {
         NSUserDefaults.standardUserDefaults().setInteger(0, forKey: self.dynamicType.udCountKey(alertId: alertId))
         
         let alertController = UIAlertController(
