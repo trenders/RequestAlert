@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		30E278821C8D8BBE00054FB8 /* RequestAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E278811C8D8BBE00054FB8 /* RequestAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30E278891C8D8BBE00054FB8 /* RequestAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E2787E1C8D8BBE00054FB8 /* RequestAlert.framework */; };
-		30E2788E1C8D8BBE00054FB8 /* RequestAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2788D1C8D8BBE00054FB8 /* RequestAlertTests.swift */; };
 		30E2790D1C8D94AF00054FB8 /* RequestAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +27,6 @@
 		30E278811C8D8BBE00054FB8 /* RequestAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestAlert.h; sourceTree = "<group>"; };
 		30E278831C8D8BBE00054FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30E278881C8D8BBE00054FB8 /* RequestAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RequestAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30E2788D1C8D8BBE00054FB8 /* RequestAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAlertTests.swift; sourceTree = "<group>"; };
-		30E2788F1C8D8BBE00054FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				30E278801C8D8BBE00054FB8 /* RequestAlert */,
-				30E2788C1C8D8BBE00054FB8 /* RequestAlertTests */,
 				30E2787F1C8D8BBE00054FB8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,15 +74,6 @@
 				30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */,
 			);
 			path = RequestAlert;
-			sourceTree = "<group>";
-		};
-		30E2788C1C8D8BBE00054FB8 /* RequestAlertTests */ = {
-			isa = PBXGroup;
-			children = (
-				30E2788D1C8D8BBE00054FB8 /* RequestAlertTests.swift */,
-				30E2788F1C8D8BBE00054FB8 /* Info.plist */,
-			);
-			path = RequestAlertTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +192,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E2788E1C8D8BBE00054FB8 /* RequestAlertTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +369,7 @@
 				30E278941C8D8BBE00054FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30E278951C8D8BBE00054FB8 /* Build configuration list for PBXNativeTarget "RequestAlertTests" */ = {
 			isa = XCConfigurationList;
@@ -391,6 +378,7 @@
 				30E278971C8D8BBE00054FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
