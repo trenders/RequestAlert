@@ -132,6 +132,8 @@ public struct RequestAlert {
             style: .Default,
             handler: { (action) -> Void in
                 pushedOKButtonClosure?()
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: self.dynamicType.udHasBeenPushedOKButtonKey(alertId: self.alertId))
+                NSUserDefaults.standardUserDefaults().synchronize()
         }))
         
         let currentVC = currentViewController()
