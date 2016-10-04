@@ -82,11 +82,11 @@ public struct RequestAlert {
         }
     }
     
-    public static func hasDisplayed(id id: String) -> Bool {
+    public static func hasBeenDisplayed(id id: String) -> Bool {
         let udKey = udDisplayedNumKey(alertId: id)
-        let hasDisplayed = NSUserDefaults.standardUserDefaults().boolForKey(udKey)
+        let hasBeenDisplayed = NSUserDefaults.standardUserDefaults().boolForKey(udKey)
         
-        return hasDisplayed
+        return hasBeenDisplayed
     }
     
     public static func hasBeenPushedOKButton(id id: String) -> Bool {
