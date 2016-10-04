@@ -4,3 +4,7 @@ framework module RequestAlert {
   export *
   module * { export * }
 }
+
+module RequestAlert.Swift {
+    header "RequestAlert-Swift.h"
+}
