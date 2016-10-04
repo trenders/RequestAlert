@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30451E9A1DA34FB6001043C1 /* RequestAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30451E991DA34FB6001043C1 /* RequestAlert.framework */; };
+		30451E9B1DA34FB6001043C1 /* RequestAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30451E991DA34FB6001043C1 /* RequestAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		30451E9F1DA3503C001043C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30451E9E1DA3503C001043C1 /* Constants.swift */; };
 		30E278DF1C8D903400054FB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E278DE1C8D903400054FB8 /* AppDelegate.swift */; };
 		30E278E11C8D903400054FB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E278E01C8D903400054FB8 /* ViewController.swift */; };
 		30E278E41C8D903400054FB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30E278E21C8D903400054FB8 /* Main.storyboard */; };
@@ -33,7 +36,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		30451E9C1DA34FB6001043C1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				30451E9B1DA34FB6001043C1 /* RequestAlert.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		30451E991DA34FB6001043C1 /* RequestAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RequestAlert.framework; sourceTree = "<group>"; };
+		30451E9E1DA3503C001043C1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30E278DB1C8D903400054FB8 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E278DE1C8D903400054FB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30E278E01C8D903400054FB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30451E9A1DA34FB6001043C1 /* RequestAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +97,7 @@
 		30E278D21C8D903400054FB8 = {
 			isa = PBXGroup;
 			children = (
+				30451E991DA34FB6001043C1 /* RequestAlert.framework */,
 				30E278DD1C8D903400054FB8 /* Demo */,
 				30E278F21C8D903400054FB8 /* DemoTests */,
 				30E278FD1C8D903400054FB8 /* DemoUITests */,
@@ -103,6 +124,7 @@
 				30E278E51C8D903400054FB8 /* Assets.xcassets */,
 				30E278E71C8D903400054FB8 /* LaunchScreen.storyboard */,
 				30E278EA1C8D903400054FB8 /* Info.plist */,
+				30451E9E1DA3503C001043C1 /* Constants.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -135,6 +157,8 @@
 				30E278D71C8D903400054FB8 /* Sources */,
 				30E278D81C8D903400054FB8 /* Frameworks */,
 				30E278D91C8D903400054FB8 /* Resources */,
+				30451E9C1DA34FB6001043C1 /* Embed Frameworks */,
+				30451E9D1DA34FD8001043C1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,13 +217,16 @@
 				TargetAttributes = {
 					30E278DA1C8D903400054FB8 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					30E278EE1C8D903400054FB8 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = 30E278DA1C8D903400054FB8;
 					};
 					30E278F91C8D903400054FB8 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = 30E278DA1C8D903400054FB8;
 					};
 				};
@@ -251,6 +278,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30451E9D1DA34FD8001043C1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RequestAlert.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		30E278D71C8D903400054FB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +302,7 @@
 			files = (
 				30E278E11C8D903400054FB8 /* ViewController.swift in Sources */,
 				30E278DF1C8D903400054FB8 /* AppDelegate.swift in Sources */,
+				30451E9F1DA3503C001043C1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +442,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -408,10 +458,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -423,6 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Debug;
@@ -435,6 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
 			name = Release;
@@ -446,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Demo;
 				USES_XCTRUNNER = YES;
 			};
@@ -458,6 +516,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = Demo;
 				USES_XCTRUNNER = YES;
 			};
@@ -482,6 +541,7 @@
 				30E279051C8D903400054FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30E279061C8D903400054FB8 /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +550,7 @@
 				30E279081C8D903400054FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30E279091C8D903400054FB8 /* Build configuration list for PBXNativeTarget "DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +559,7 @@
 				30E2790B1C8D903400054FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

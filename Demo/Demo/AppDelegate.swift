@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RequestAlert
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setUpRequestAlerts()
         return true
     }
 
@@ -41,6 +44,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func setUpRequestAlerts() {
+        
+        RequestAlert.addRequestAlert(
+            id: RequestAlertType.pushNotification.id,
+            intervalCount: 10,
+            alertTitle: "Please turn on the push notification",
+            message: "When you turn on the notification, it will deliver the new information in the notification",
+            cancelButtonTitle: "cancel",
+            OKButtonTitle: "OK")
+        
+        RequestAlert.addRequestAlert(
+            id: RequestAlertType.review.id,
+            intervalCount: 5,
+            alertTitle: "Review Request!!!",
+            message: "Please tell me your opinion",
+            cancelButtonTitle: "later",
+            OKButtonTitle: "review")
+        
+        RequestAlert.addRequestAlert(
+            id: RequestAlertType.share.id,
+            intervalCount: 2,
+            alertTitle: "Please share",
+            message: "Why do not you share?",
+            cancelButtonTitle: "no thanks",
+            OKButtonTitle: "OK")
+    }
 }
 

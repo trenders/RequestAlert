@@ -70,7 +70,7 @@ public struct RequestAlert {
     public static func incrementCount(id id: String, pushedOKButtonClosure: (() -> Void)? ){
 
         var currentCount = NSUserDefaults.standardUserDefaults().integerForKey(udCountKey(alertId: id))
-        currentCount++
+        currentCount += 1
         
         guard let alert = requestAlertInstancesDic[id] else { fatalError("There is no alert id : \(id)") }
         
@@ -82,11 +82,11 @@ public struct RequestAlert {
         }
     }
     
-    public static func hasDisplayed(id id: String) -> Bool {
+    public static func hasBeenDisplayed(id id: String) -> Bool {
         let udKey = udDisplayedNumKey(alertId: id)
-        let hasDisplayed = NSUserDefaults.standardUserDefaults().boolForKey(udKey)
+        let hasBeenDisplayed = NSUserDefaults.standardUserDefaults().boolForKey(udKey)
         
-        return hasDisplayed
+        return hasBeenDisplayed
     }
     
     public static func hasBeenPushedOKButton(id id: String) -> Bool {
@@ -156,7 +156,7 @@ public struct RequestAlert {
     
     private func incrementDisplayedNum() {
         var currentDisplayedNum = NSUserDefaults.standardUserDefaults().integerForKey(self.dynamicType.udDisplayedNumKey(alertId: alertId))
-        currentDisplayedNum++
+        currentDisplayedNum += 1
         
         NSUserDefaults.standardUserDefaults().setInteger(currentDisplayedNum, forKey: self.dynamicType.udDisplayedNumKey(alertId: alertId))
         NSUserDefaults.standardUserDefaults().synchronize()
