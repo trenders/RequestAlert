@@ -1,0 +1,10 @@
+framework module RequestAlert {
+  umbrella header "RequestAlert.h"
+
+  export *
+  module * { export * }
+}
+
+module RequestAlert.Swift {
+    header "RequestAlert-Swift.h"
+}
