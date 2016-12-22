@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 public struct RequestAlert {
     
-    private static var requestAlertInstancesDic = [String: RequestAlert]()
+    fileprivate static var requestAlertInstancesDic = [String: RequestAlert]()
     
-    private static let kBundleId = "harakenta.RequestAlert."
+    fileprivate static let kBundleId = "harakenta.RequestAlert."
     
-    private static let kUdCountKeyBase = kBundleId + "udCountKeyBase."
-    private static let kUdDisplayedNumKeyBase = kBundleId + "udDisplayedNumKeyBase."
-    private static let kUdHasBeenPushedOKButtonKeyBase = kBundleId + "udHasBeenPushedOKButtonKeyBase."
+    fileprivate static let kUdCountKeyBase = kBundleId + "udCountKeyBase."
+    fileprivate static let kUdDisplayedNumKeyBase = kBundleId + "udDisplayedNumKeyBase."
+    fileprivate static let kUdHasBeenPushedOKButtonKeyBase = kBundleId + "udHasBeenPushedOKButtonKeyBase."
     
-    private var alertId: String
-    private var intervalCount: Int
-    private var alertTitle: String
-    private var message: String
-    private var cancelButtonTitle: String
-    private var OKButtonTitle: String
+    fileprivate var alertId: String
+    fileprivate var intervalCount: Int
+    fileprivate var alertTitle: String
+    fileprivate var message: String
+    fileprivate var cancelButtonTitle: String
+    fileprivate var OKButtonTitle: String
     
     init(
         alertId: String,
@@ -42,7 +42,7 @@ public struct RequestAlert {
     }
     
     public static func addRequestAlert(
-        id id: String,
+        id: String,
         intervalCount: Int,
         alertTitle: String,
         message: String,
@@ -60,16 +60,16 @@ public struct RequestAlert {
         requestAlertInstancesDic[id] = requestAlert
     }
     
-    public static func showAlert(id id: String, pushedOKButtonClosure: (() -> Void)?) {
+    public static func showAlert(id: String, pushedOKButtonClosure: (() -> Void)?) {
         guard let alert = requestAlertInstancesDic[id] else { fatalError("There is no alert id : \(id)") }
         
         alert.showAlertController(pushedOKButtonClosure: pushedOKButtonClosure)
         
     }
 
-    public static func incrementCount(id id: String, pushedOKButtonClosure: (() -> Void)? ){
+    public static func incrementCount(id: String, pushedOKButtonClosure: (() -> Void)? ){
 
-        var currentCount = NSUserDefaults.standardUserDefaults().integerForKey(udCountKey(alertId: id))
+        var currentCount = UserDefaults.standard.integer(forKey: udCountKey(alertId: id))
         currentCount += 1
         
         guard let alert = requestAlertInstancesDic[id] else { fatalError("There is no alert id : \(id)") }
@@ -77,88 +77,88 @@ public struct RequestAlert {
         if alert.shouldShowAlertController(currentCount: currentCount) {
             alert.showAlertController(pushedOKButtonClosure: pushedOKButtonClosure)
         } else {
-            NSUserDefaults.standardUserDefaults().setInteger(currentCount, forKey: udCountKey(alertId: id))
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.set(currentCount, forKey: udCountKey(alertId: id))
+            UserDefaults.standard.synchronize()
         }
     }
     
-    public static func hasBeenDisplayed(id id: String) -> Bool {
+    public static func hasBeenDisplayed(id: String) -> Bool {
         let udKey = udDisplayedNumKey(alertId: id)
-        let hasBeenDisplayed = NSUserDefaults.standardUserDefaults().boolForKey(udKey)
+        let hasBeenDisplayed = UserDefaults.standard.bool(forKey: udKey)
         
         return hasBeenDisplayed
     }
     
-    public static func hasBeenPushedOKButton(id id: String) -> Bool {
+    public static func hasBeenPushedOKButton(id: String) -> Bool {
         let udKey = udHasBeenPushedOKButtonKey(alertId: id)
-        let hasBeenPushedOKButton = NSUserDefaults.standardUserDefaults().boolForKey(udKey)
+        let hasBeenPushedOKButton = UserDefaults.standard.bool(forKey: udKey)
         
         return hasBeenPushedOKButton
     }
     
     //MARK: - private methods
     
-    private static func udCountKey(alertId alertId: String) -> String {
+    fileprivate static func udCountKey(alertId: String) -> String {
         return kUdCountKeyBase + alertId
     }
     
-    private static func udDisplayedNumKey(alertId alertId: String) -> String {
+    fileprivate static func udDisplayedNumKey(alertId: String) -> String {
         return kUdDisplayedNumKeyBase + alertId
     }
     
-    private static func udHasBeenPushedOKButtonKey(alertId alertId: String) -> String {
+    fileprivate static func udHasBeenPushedOKButtonKey(alertId: String) -> String {
         return kUdHasBeenPushedOKButtonKeyBase + alertId
     }
     
-    private func shouldShowAlertController(currentCount currentCount: Int) -> Bool {
+    fileprivate func shouldShowAlertController(currentCount: Int) -> Bool {
         return currentCount >= intervalCount
     }
     
-    private func showAlertController(pushedOKButtonClosure pushedOKButtonClosure: (() -> Void)?) {
-        NSUserDefaults.standardUserDefaults().setInteger(0, forKey: self.dynamicType.udCountKey(alertId: alertId))
+    fileprivate func showAlertController(pushedOKButtonClosure: (() -> Void)?) {
+        UserDefaults.standard.set(0, forKey: type(of: self).udCountKey(alertId: alertId))
         
         let alertController = UIAlertController(
             title: alertTitle,
             message: message,
-            preferredStyle: .Alert)
+            preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(
             title: cancelButtonTitle,
-            style: .Cancel,
+            style: .cancel,
             handler: nil))
         
         alertController.addAction(UIAlertAction(
             title: OKButtonTitle,
-            style: .Default,
+            style: .default,
             handler: { (action) -> Void in
                 pushedOKButtonClosure?()
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: self.dynamicType.udHasBeenPushedOKButtonKey(alertId: self.alertId))
-                NSUserDefaults.standardUserDefaults().synchronize()
+                UserDefaults.standard.set(true, forKey: type(of: self).udHasBeenPushedOKButtonKey(alertId: self.alertId))
+                UserDefaults.standard.synchronize()
         }))
         
         let currentVC = currentViewController()
         
-        currentVC.presentViewController(alertController, animated: true, completion: nil)
+        currentVC.present(alertController, animated: true, completion: nil)
         
         incrementDisplayedNum()
     }
     
-    private func currentViewController() -> UIViewController {
+    fileprivate func currentViewController() -> UIViewController {
         
-        guard var baseView = UIApplication.sharedApplication().keyWindow?.rootViewController else { fatalError("There is no rootViewController") }
+        guard var baseView = UIApplication.shared.keyWindow?.rootViewController else { fatalError("There is no rootViewController") }
         
-        while baseView.presentedViewController != nil && !baseView.presentedViewController!.isBeingDismissed() {
+        while baseView.presentedViewController != nil && !baseView.presentedViewController!.isBeingDismissed {
             baseView = baseView.presentedViewController!
         }
         
         return baseView
     }
     
-    private func incrementDisplayedNum() {
-        var currentDisplayedNum = NSUserDefaults.standardUserDefaults().integerForKey(self.dynamicType.udDisplayedNumKey(alertId: alertId))
+    fileprivate func incrementDisplayedNum() {
+        var currentDisplayedNum = UserDefaults.standard.integer(forKey: type(of: self).udDisplayedNumKey(alertId: alertId))
         currentDisplayedNum += 1
         
-        NSUserDefaults.standardUserDefaults().setInteger(currentDisplayedNum, forKey: self.dynamicType.udDisplayedNumKey(alertId: alertId))
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(currentDisplayedNum, forKey: type(of: self).udDisplayedNumKey(alertId: alertId))
+        UserDefaults.standard.synchronize()
     }
 }
