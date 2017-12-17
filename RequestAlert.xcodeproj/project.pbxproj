@@ -8,25 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		30E278821C8D8BBE00054FB8 /* RequestAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 30E278811C8D8BBE00054FB8 /* RequestAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30E278891C8D8BBE00054FB8 /* RequestAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E2787E1C8D8BBE00054FB8 /* RequestAlert.framework */; };
 		30E2790D1C8D94AF00054FB8 /* RequestAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		30E2788A1C8D8BBE00054FB8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30E278751C8D8BBE00054FB8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 30E2787D1C8D8BBE00054FB8;
-			remoteInfo = RequestAlert;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		30E2787E1C8D8BBE00054FB8 /* RequestAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RequestAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E278811C8D8BBE00054FB8 /* RequestAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestAlert.h; sourceTree = "<group>"; };
 		30E278831C8D8BBE00054FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30E278881C8D8BBE00054FB8 /* RequestAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RequestAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E2790C1C8D94AF00054FB8 /* RequestAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,14 +23,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30E278851C8D8BBE00054FB8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E278891C8D8BBE00054FB8 /* RequestAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				30E2787E1C8D8BBE00054FB8 /* RequestAlert.framework */,
-				30E278881C8D8BBE00054FB8 /* RequestAlertTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,24 +87,6 @@
 			productReference = 30E2787E1C8D8BBE00054FB8 /* RequestAlert.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		30E278871C8D8BBE00054FB8 /* RequestAlertTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 30E278951C8D8BBE00054FB8 /* Build configuration list for PBXNativeTarget "RequestAlertTests" */;
-			buildPhases = (
-				30E278841C8D8BBE00054FB8 /* Sources */,
-				30E278851C8D8BBE00054FB8 /* Frameworks */,
-				30E278861C8D8BBE00054FB8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				30E2788B1C8D8BBE00054FB8 /* PBXTargetDependency */,
-			);
-			name = RequestAlertTests;
-			productName = RequestAlertTests;
-			productReference = 30E278881C8D8BBE00054FB8 /* RequestAlertTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -133,15 +94,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Hara Kenta";
 				TargetAttributes = {
 					30E2787D1C8D8BBE00054FB8 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0820;
-					};
-					30E278871C8D8BBE00054FB8 = {
-						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -158,20 +116,12 @@
 			projectRoot = "";
 			targets = (
 				30E2787D1C8D8BBE00054FB8 /* RequestAlert */,
-				30E278871C8D8BBE00054FB8 /* RequestAlertTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		30E2787C1C8D8BBE00054FB8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30E278861C8D8BBE00054FB8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -189,22 +139,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30E278841C8D8BBE00054FB8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		30E2788B1C8D8BBE00054FB8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 30E2787D1C8D8BBE00054FB8 /* RequestAlert */;
-			targetProxy = 30E2788A1C8D8BBE00054FB8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		30E278901C8D8BBE00054FB8 /* Debug */ = {
@@ -215,14 +150,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -265,14 +206,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -317,7 +264,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -336,27 +284,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = harakenta.RequestAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		30E278961C8D8BBE00054FB8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = RequestAlertTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = harakenta.RequestAlertTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		30E278971C8D8BBE00054FB8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = RequestAlertTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = harakenta.RequestAlertTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -377,15 +306,6 @@
 			buildConfigurations = (
 				30E278931C8D8BBE00054FB8 /* Debug */,
 				30E278941C8D8BBE00054FB8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30E278951C8D8BBE00054FB8 /* Build configuration list for PBXNativeTarget "RequestAlertTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				30E278961C8D8BBE00054FB8 /* Debug */,
-				30E278971C8D8BBE00054FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
